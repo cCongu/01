@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdbool.h>
+#define MAX 500
+typedef int tvector[MAX];
+
+void ejercicio2(tvector vector, int ML, int *posi_negativo, bool *par_mayor){
+    *posi_negativo = -1;
+    *par_mayor = false;
+    int i = 0;
+    
+    while(i < ML && !(*par_mayor && *posi_negativo != -1)){
+
+        if(*posi_negativo == -1 && vector[i] < 0){
+            *posi_negativo = i;
+        }
+        else if (vector[i] % 2 == 0 && vector[i] > 100){
+            *par_mayor = true;
+        }
+        i++;
+    }
+}
